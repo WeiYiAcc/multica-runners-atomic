@@ -1,0 +1,6 @@
+logs/
+daemon-workers/
+session-artifacts/
+kernel-venv/
+*.sock
+*.jsonl
