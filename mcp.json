@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "ariadne-fact": {
+      "url": "http://100.110.98.84:7735/mcp",
+      "headers": {
+        "Authorization": "Bearer UfRabRDoLpEgBKAzpH5oyA95pCLzzI4R1hb5TE3hh2E"
+      },
+      "lifecycle": "lazy"
+    },
+    "ai-memory": {
+      "url": "http://100.110.98.84:49374/mcp",
+      "headers": {
+        "Authorization": "Bearer 2e6af95a452634376d09204ba1a7be3ee60f6a6202ce23ee4da5c380264d6f07"
+      },
+      "lifecycle": "lazy"
+    }
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "version": "0.9.0-20260327",
+  "enabled": true,
+  "features": {
+    "policies": true,
+    "permissionGate": false
+  },
+  "policies": {
+    "rules": [
+      {
+        "id": "secret-files",
+        "description": "Files containing secrets",
+        "patterns": [
+          {
+            "pattern": ".env"
+          },
+          {
+            "pattern": ".env.local"
+          },
+          {
+            "pattern": ".env.production"
+          },
+          {
+            "pattern": ".env.prod"
+          },
+          {
+            "pattern": ".dev.vars"
+          }
+        ],
+        "allowedPatterns": [
+          {
+            "pattern": ".env.example"
+          },
+          {
+            "pattern": ".env.sample"
+          },
+          {
+            "pattern": ".env.test"
+          }
+        ],
+        "protection": "noAccess",
+        "onlyIfExists": true
+      },
+      {
+        "id": "polylith-structure",
+        "name": "Polylith Guard",
+        "description": "Enforce Polylith directory structure in my-toolbox/",
+        "patterns": [
+          {
+            "pattern": "ariadne/my-toolbox/**",
+            "regex": false
+          }
+        ],
+        "allowedPatterns": [
+          {
+            "pattern": "my-toolbox/my-*/bases/**",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-*/components/**",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-*/projects/**",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-*/development/**",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-clj/bin/**",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-clj/config.example/**",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-py/test/**",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-py/orig/**",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-ts/bin/**",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-ts/test/**",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-*/bb.edn",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-*/deps.edn",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-*/workspace.edn",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-*/package.json",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-*/pyproject.toml",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-*/tsconfig.json",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-*/bun.lock",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-*/workspace.toml",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-*/uv.lock",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-*/main.py",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-*/README.md",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-*/.gitignore",
+            "regex": false
+          },
+          {
+            "pattern": "my-toolbox/my-*/data.template.csv",
+            "regex": false
+          }
+        ],
+        "protection": "readOnly",
+        "onlyIfExists": false,
+        "blockMessage": "\ud83d\udee1\ufe0f Polylith Guard: {file} \u4e0d\u7b26\u5408 Polylith \u7ed3\u6784\u3002\u4ee3\u7801\u8bf7\u653e\u5230 bases/\u3001components/ \u6216 projects/ \u4e2d\u3002"
+      }
+    ]
+  },
+  "permissionGate": {
+    "requireConfirmation": false,
+    "patterns": [
+      {
+        "pattern": "\\bgh\\s+issue\\s+create\\b",
+        "description": "public GitHub issue creation \u2014 check for sensitive data",
+        "regex": true
+      },
+      {
+        "pattern": "\\bgh\\s+issue\\s+edit\\b",
+        "description": "public GitHub issue edit \u2014 check for sensitive data",
+        "regex": true
+      },
+      {
+        "pattern": "\\bgh\\s+issue\\s+comment\\b",
+        "description": "public GitHub issue comment \u2014 check for sensitive data",
+        "regex": true
+      },
+      {
+        "pattern": "\\bgh\\s+pr\\s+create\\b",
+        "description": "public GitHub PR creation \u2014 check for sensitive data",
+        "regex": true
+      },
+      {
+        "pattern": "\\bgh\\s+pr\\s+comment\\b",
+        "description": "public GitHub PR comment \u2014 check for sensitive data",
+        "regex": true
+      },
+      {
+        "pattern": "\\bgh\\s+pr\\s+review\\b",
+        "description": "public GitHub PR review \u2014 check for sensitive data",
+        "regex": true
+      },
+      {
+        "pattern": "\\bgh\\s+gist\\s+create\\b",
+        "description": "public gist creation \u2014 check for sensitive data",
+        "regex": true
+      },
+      {
+        "pattern": "\\bgh\\s+release\\s+create\\b",
+        "description": "public release creation \u2014 check for sensitive data",
+        "regex": true
+      }
+    ]
+  },
+  "applyBuiltinDefaults": true,
+  "onboarding": {
+    "completed": true,
+    "completedAt": "2026-04-05T12:16:20.591Z",
+    "version": "0.9.0-20260327"
+  }
+}

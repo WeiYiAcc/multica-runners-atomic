@@ -1,0 +1,10 @@
+{
+  "defaultProvider": "gproxy",
+  "defaultModel": "ox-alpha-free",
+  "defaultThinkingLevel": "low",
+  "enabledModels": [
+    "gproxy/ox-alpha-free"
+  ],
+  "packages": [],
+  "npmCommand": ["pnpm"]
+}
